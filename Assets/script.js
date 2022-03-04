@@ -1,7 +1,7 @@
 // Set var from DOM
 const saveBtn = $(".saveBtn");
 
-// TODO: Get current date
+// Get current date
 $("#currentDay").text(
     // toLocaleString returns a string to display
     luxon.DateTime.now().toLocaleString({
@@ -20,7 +20,7 @@ saveBtn.on("click", function () {
 
 
 // Load data from local storage to display user inputs on reload
-function StoreEl() {
+function loadEl() {
     $(".hour").each(function () {
         let currentHour = $(this).text();
         let storedText = localStorage.getItem(currentHour);
@@ -34,6 +34,20 @@ function StoreEl() {
 
 // TODO: function to highlight hour blocks based on current time
 // done by setting class to past, present or future based on current time
+function timeBlockColor() {
+    // get current time from luxon
+    let currentHour = parseInt(luxon.DateTime.now().toLocaleString({
+        hour: "2-digit",
+        hour12: false
+    }))
+    console.log(currentHour);
+
+    // format time to match classes from html
+
+    // create logic to set css based on if time is <, > or = current time
 
 
-StoreEl()
+}
+
+loadEl()
+timeBlockColor()
