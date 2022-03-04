@@ -5,9 +5,9 @@ const saveBtn = $(".saveBtn");
 $("#currentDay").text(
     // toLocaleString returns a string to display
     luxon.DateTime.now().toLocaleString({
-      weekday: "long",
-      month: "long",
-      day: "2-digit",
+        weekday: "long",
+        month: "long",
+        day: "2-digit",
     })
 );
 
@@ -21,18 +21,19 @@ saveBtn.on("click", function () {
 
 // Load data from local storage to display user inputs on reload
 function StoreEl() {
-$(".hour").each(function () {
-    let currentHour = $(this).text();
-    let storedText = localStorage.getItem(currentHour);
+    $(".hour").each(function () {
+        let currentHour = $(this).text();
+        let storedText = localStorage.getItem(currentHour);
 
-    $(this).siblings(".description").val(storedText)
-
-})
+        if (storedText !== null) {
+            $(this).siblings(".description").val(storedText)
+        }
+    })
 }
 
 
 // TODO: function to highlight hour blocks based on current time
-    // done by setting class to past, present or future based on current time
+// done by setting class to past, present or future based on current time
 
 
 StoreEl()
