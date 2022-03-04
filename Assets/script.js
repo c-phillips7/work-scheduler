@@ -40,11 +40,14 @@ function timeBlockColor() {
         hour: "2-digit",
         hour12: false
     }))
-    console.log(currentHour);
-
-    // format time to match classes from html
 
     // create logic to set css based on if time is <, > or = current time
+    $(".time-block").each(function () {
+        let hour = parseInt($(this).attr("id"))
+        if (currentHour > hour) $(this).addClass("past");
+        else if (currentHour === hour) $(this).addClass("present");
+        else $(this).addClass("future")
+    })
 
 
 }
