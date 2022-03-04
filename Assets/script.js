@@ -19,12 +19,13 @@ saveBtn.on("click", function () {
 })
 
 
-// TODO: function to load from local storage to display user inputs
+// Load data from local storage to display user inputs on reload
 function StoreEl() {
-    // for each hour, get user text from local storage
 $(".hour").each(function () {
-    // Gives the time for each div
-    console.log($(this).text());
+    let currentHour = $(this).text();
+    let storedText = localStorage.getItem(currentHour);
+
+    $(this).siblings(".description").val(storedText)
 
 })
 }
