@@ -32,10 +32,9 @@ function loadEl() {
 }
 
 
-// TODO: function to highlight hour blocks based on current time
-// done by setting class to past, present or future based on current time
+// change css for hour blocks based on current time (past, present, future)
 function timeBlockColor() {
-    // get current time from luxon
+    // get current time from luxon (used 24 hour time to simplify logic)
     let currentHour = parseInt(luxon.DateTime.now().toLocaleString({
         hour: "2-digit",
         hour12: false
@@ -48,8 +47,6 @@ function timeBlockColor() {
         else if (currentHour === hour) $(this).addClass("present");
         else $(this).addClass("future")
     })
-
-
 }
 
 loadEl()
