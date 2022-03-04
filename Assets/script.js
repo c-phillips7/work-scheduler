@@ -11,18 +11,27 @@ $("#currentDay").text(
     })
 );
 
-// TODO: function on click of save:
-// save hour and added text to local storage
+// on click, save hour and added text to local storage
 saveBtn.on("click", function () {
     let time = $(this).siblings(".hour").text();
     let userText = $(this).siblings(".description").val();
-    console.log(time);
-    console.log(userText);
+    localStorage.setItem(time, userText);
 })
 
 
 // TODO: function to load from local storage to display user inputs
+function StoreEl() {
+    // for each hour, get user text from local storage
+$(".hour").each(function () {
+    // Gives the time for each div
+    console.log($(this).text());
+
+})
+}
 
 
 // TODO: function to highlight hour blocks based on current time
     // done by setting class to past, present or future based on current time
+
+
+StoreEl()
