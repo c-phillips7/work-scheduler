@@ -1,8 +1,15 @@
 // Set var from DOM
-const saveBtn = $('.saveBtn');
+const saveBtn = $(".saveBtn");
 
 // TODO: Get current date
-
+$("#currentDay").text(
+    // toLocaleString returns a string to display
+    luxon.DateTime.now().toLocaleString({
+      weekday: "long",
+      month: "long",
+      day: "2-digit",
+    })
+);
 
 // TODO: function on click of save:
 // save hour and added text to local storage
