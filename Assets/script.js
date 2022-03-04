@@ -13,6 +13,12 @@ $("#currentDay").text(
 
 // TODO: function on click of save:
 // save hour and added text to local storage
+saveBtn.on("click", function () {
+    let time = $(this).siblings(".hour").text();
+    let userText = $(this).siblings(".description").val();
+    console.log(time);
+    console.log(userText);
+})
 
 
 // TODO: function to load from local storage to display user inputs
